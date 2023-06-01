@@ -1,0 +1,46 @@
+
+public class Hotspot : MonoBehaviour
+{
+    public string hotspotName;
+    public GameObject hotspotUI;
+
+    private bool isActivated = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ActivateHotspot();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            DeactivateHotspot();
+        }
+    }
+
+    private void ActivateHotspot()
+    {
+        if (!isActivated)
+        {
+            // Show UI or perform desired actions when the hotspot is activated
+            hotspotUI.SetActive(true);
+            Debug.Log("Hotspot activated: " + hotspotName);
+            isActivated = true;
+        }
+    }
+
+    private void DeactivateHotspot()
+    {
+        if (isActivated)
+        {
+            // Hide UI or perform desired actions when the hotspot is deactivated
+            hotspotUI.SetActive(false);
+            Debug.Log("Hotspot deactivated: " + hotspotName);
+            isActivated = false;
+        }
+    }
+}
