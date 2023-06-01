@@ -263,15 +263,3 @@ ul li a:hover{
 .icons ion-icon:hover{
     color: #5d00ff;
 }
-@media(max-width: 768px ) {
-    ul{
-        
-        display: block;
-    }
- 
-    .main{
-        width: 100%;
-        height: auto;
-    }
-
-}
